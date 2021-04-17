@@ -41,16 +41,19 @@ puts a few scripts in place to run gnome-session with i3.
 On Pop OS, we use the "Installation using make" instructions:
 
 ```
-git clone git@github.com:i3-gnome/i3-gnome.git.
+git clone https://github.com/i3-gnome/i3-gnome.git
 cd i3-gnome
 sudo make install
 ```
 
 Now, the config files from this repo should be copied to their respective locations.
 
+
 ```
+git clone https://github.com/bsherman/popos-i3-gnome.git
+cd popos-i3-gnome
 mkdir -p $HOME/.config/{alacritty,i3,picom,rofi}
-# copy files
+for file in $(find .config -type f); do echo cp -v $file $HOME/$file; done
 ```
 
 Logout of GNOME.
