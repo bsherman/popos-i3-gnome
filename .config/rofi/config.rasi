@@ -1,0 +1,9 @@
+configuration {
+    font:                 "Fira Sans 11";
+    show-icons:           true;
+    drun-display-format:  "{icon} {name}";
+    modi:                 "combi,run";
+    display-combi:        "drun";
+    icon-theme:           "Pop";
+    theme:                "Pop-Dark";
+}
