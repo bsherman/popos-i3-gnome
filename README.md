@@ -25,9 +25,11 @@ There's some packages to install on your Pop OS system before you can use this:
 A few settings must be configured for `gnome-flashback`:
 
 First, this prevents the gnome desktop from showing up (it wouldn't work right anyway):
+
 `gsettings set org.gnome.gnome-flashback desktop false`
 
 Second, this prevents gnome from holding the systemtray, and allow i3bar to handle it:
+
 `gsettings set org.gnome.gnome-flashback status-notifier-watcher false`
 
 

@@ -230,7 +230,8 @@ for_window [class="^steam_app*"] floating enable
 exec --no-startup-id picom -b
 
 # notifications
-#  Pop OS `i3` package installed dunst
+#  Pop OS `i3` package installed dunst, but we it's competing with gnome at the moment
+exec --no-startup-id bash -c "killall dunst"
 
 # gnome integration
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
