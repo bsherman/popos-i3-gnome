@@ -52,7 +52,7 @@ Now, the config files from this repo should be copied to their respective locati
 ```
 git clone https://github.com/bsherman/popos-i3-gnome.git
 cd popos-i3-gnome
-mkdir -p $HOME/.config/{alacritty,i3,picom,rofi}
+mkdir -p $HOME/.config/{alacritty,dunst,i3,picom,rofi}
 for file in $(find .config -type f); do echo cp -v $file $HOME/$file; done
 ```
 
