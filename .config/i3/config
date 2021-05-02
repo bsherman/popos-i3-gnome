@@ -188,6 +188,14 @@ bindsym $mod+r mode "resize";
 #  i.e. popup, do stuff, close
 # To get WM_CLASS and WM_TITLE values, on X run "xprop"
 
+# settings apps
+for_window [class="Gnome-tweaks"] floating enable
+for_window [class="Gnome-control-center"] floating enable
+for_window [class="Io.elementary.appcenter"] floating enable
+for_window [class="Gnome-calculator"] floating enable
+for_window [class="qt5ct"] floating enable
+for_window [class="Synergy"] floating enable
+
 # spotify, plexamp assigned to workspace and float plexamp
 assign [class="^Spotify"] $ws9
 assign [class="^Plexamp"] $ws9
@@ -215,8 +223,7 @@ for_window [class="Pavucontrol"] floating enable
 for_window [class="Moonlight"] floating enable
 for_window [class="minecraft-launcher"] floating enable
 for_window [class="^Minecraft*"] floating enable
-# steam popups float, but not the main window
-for_window [class="Steam" title="^(?!Steam).*$"] floating enable
+for_window [class="Steam"] floating enable
 # note: some games want to toggle fullscreen to be able to return to game, or use borderless windowed mode
 for_window [class="^steam_app*"] floating enable
 
@@ -230,18 +237,18 @@ for_window [class="^steam_app*"] floating enable
 exec --no-startup-id picom -b
 
 # notifications
-#  Pop OS `i3` package installed dunst, but we it's competing with gnome at the moment
-exec --no-startup-id bash -c "killall dunst"
+# Pop OS `i3` package installed dunst, but it can be disabled like this for gnome notifications
+# I've included dunst config though
+#exec --no-startup-id bash -c "systemctl --user disable --now dunst"
+
 
 # gnome integration
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
-exec_always --no-startup-id gnome-power-manager
 exec --no-startup-id gnome-flashback
-exec --no-startup-id /usr/bin/gnome-screensaver
 
 # personal execs
-#exec --no-startup-id pasystray # this seems to get started by gnome-flashback
-#exec --no-startup-id blueman-applet # this seems to get started by gnome-flashback
+#exec --no-startup-id pasystray # this is started by gnome-flashback by default
+#exec --no-startup-id blueman-applet # this is started by gnome-flashback by default
 exec --no-startup-id nm-applet
 
 # set background to a Pop OS! background we can choose to match Gnome
